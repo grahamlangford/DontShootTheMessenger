@@ -1,6 +1,12 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Button } from "react-native-material-ui";
+import { Button, COLOR, ThemeProvider } from "react-native-material-ui";
+
+const uiTheme = {
+  palette: {
+    primaryColor: COLOR.green500
+  }
+};
 
 export default class App extends React.Component {
   constructor(props) {
@@ -19,13 +25,13 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Testing 1,2,3...</Text>
-        <Button accent title="A Button" onPress={this.buttonHandler} />
-        {this.state.buttonPressed && <Text>A button was pressed!</Text>}
-      </View>
+      <ThemeProvider uiTheme={uiTheme}>
+        <View style={styles.container}>
+          <Text>Testing 1,2,3...</Text>
+          <Button primary raised text="A Button" onPress={this.buttonHandler} />
+          {this.state.buttonPressed && <Text>A button was pressed!</Text>}
+        </View>
+      </ThemeProvider>
     );
   }
 }
