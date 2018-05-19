@@ -1,12 +1,8 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
-import { ThemeProvider } from 'react-native-material-ui'
-import Main from './src/pages/Main'
-import uiTheme from './src/uiTheme'
+import { StyleSheet, Text, View } from 'react-native'
+import { Button, COLOR } from 'react-native-material-ui'
 
-if (typeof global.self === 'undefined') global.self = global
-
-export default class App extends React.Component {
+export default class Main extends React.Component {
   constructor(props) {
     super(props)
     this.buttonHandler = this.buttonHandler.bind(this)
@@ -23,9 +19,11 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <ThemeProvider uiTheme={uiTheme}>
-        <Main />
-      </ThemeProvider>
+      <View style={styles.container}>
+        <Text>Testing 1,2,3...</Text>
+        <Button primary raised text="A Button" onPress={this.buttonHandler} />
+        {this.state.buttonPressed && <Text>A button was pressed!</Text>}
+      </View>
     )
   }
 }
