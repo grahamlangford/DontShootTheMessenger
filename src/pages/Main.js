@@ -8,6 +8,7 @@ import {
   ToolbarAndroid
 } from 'react-native'
 import colors from '../colors'
+import menuIcon from '../assets/icons/menu-icon.png'
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ export default class Main extends React.Component {
     }
   }
 
-  buttonHandler = () => {
+  buttonHandler() {
     this.setState((prevState) => {
       return { buttonPressed: !prevState.buttonPressed }
     })
@@ -31,6 +32,7 @@ export default class Main extends React.Component {
           title="home"
           style={styles.toolbar}
           titleColor="white"
+          navIcon={menuIcon}
         />
         <View style={styles.body}>
           <Text>Testing 1,2,3...</Text>

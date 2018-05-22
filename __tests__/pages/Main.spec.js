@@ -14,11 +14,22 @@ describe('Main.js', () => {
     expect(wrapper).toBeTruthy()
   })
 
-  //   it('matches snapshot', () => {
-  //     expect(wrapper).toMatchSnapshot()
-  //   })
+  describe('the toolbar', () => {
+    let toolbar
+    beforeEach(() => {
+      toolbar = wrapper.find(ToolbarAndroid)
+    })
 
-  it('has a toolbar', () => {
-    expect(wrapper.find(ToolbarAndroid)).toHaveLength(1)
+    it('renders', () => {
+      expect(toolbar).toHaveLength(1)
+    })
+
+    it('has the title "home"', () => {
+      expect(toolbar.prop('title')).toEqual('home')
+    })
+
+    it('has a navIcon', () => {
+      expect(toolbar.prop('navIcon')).toBeTruthy()
+    })
   })
 })
