@@ -1,6 +1,13 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { Button, COLOR } from 'react-native-material-ui'
+import {
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  StatusBar,
+  ToolbarAndroid
+} from 'react-native'
+import colors from '../colors'
 
 export default class Main extends React.Component {
   constructor(props) {
@@ -20,9 +27,20 @@ export default class Main extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Testing 1,2,3...</Text>
-        <Button primary raised text="A Button" onPress={this.buttonHandler} />
-        {this.state.buttonPressed && <Text>A button was pressed!</Text>}
+        <ToolbarAndroid
+          title="home"
+          style={styles.toolbar}
+          titleColor="white"
+        />
+        <View style={styles.body}>
+          <Text>Testing 1,2,3...</Text>
+          <Button
+            title="A different Button"
+            onPress={this.buttonHandler}
+            color={colors.primary}
+          />
+          {this.state.buttonPressed && <Text>A button was pressed!</Text>}
+        </View>
       </View>
     )
   }
@@ -30,9 +48,17 @@ export default class Main extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2
+  },
+  body: {
+    flex: 2,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  toolbar: {
+    height: 56,
+    backgroundColor: colors.primary,
+    marginTop: StatusBar.currentHeight
   }
 })

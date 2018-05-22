@@ -1,8 +1,6 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
-import { ThemeProvider } from 'react-native-material-ui'
+import { StyleSheet, Text } from 'react-native'
 import Main from './src/pages/Main'
-import uiTheme from './src/uiTheme'
 
 if (typeof global.self === 'undefined') global.self = global
 
@@ -22,11 +20,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    return (
-      <ThemeProvider uiTheme={uiTheme}>
-        <Main />
-      </ThemeProvider>
-    )
+    return <Main />
   }
 }
 

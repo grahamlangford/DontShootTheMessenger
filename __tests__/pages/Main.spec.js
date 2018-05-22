@@ -1,23 +1,24 @@
 // __tests__/Main.js
-import React from 'react'
-import { ThemeProvider } from 'react-native-material-ui'
+import { React, shallow } from '../helpers/specHelper'
+import { ToolbarAndroid } from 'react-native'
 import Main from '../../src/pages/Main'
 
-import renderer from 'react-test-renderer'
-
 describe('Main.js', () => {
-  let wrap
+  let wrapper
   beforeEach(() => {
     jest.resetModules
-    wrap = (
-      <ThemeProvider>
-        <Main />
-      </ThemeProvider>
-    )
+    wrapper = shallow(<Main />)
   })
 
   it('renders', () => {
-    const rendered = renderer.create(wrap).toJSON()
-    expect(rendered).toBeTruthy()
+    expect(wrapper).toBeTruthy()
+  })
+
+  //   it('matches snapshot', () => {
+  //     expect(wrapper).toMatchSnapshot()
+  //   })
+
+  it('has a toolbar', () => {
+    expect(wrapper.find(ToolbarAndroid)).toHaveLength(1)
   })
 })

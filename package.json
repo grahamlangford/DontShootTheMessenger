@@ -7,7 +7,13 @@
     "babel-eslint": "^8.2.3",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-1": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "jest-expo": "~27.0.0",
+    "jest-serializer-enzyme": "^1.0.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-dom": "^16.3.2",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1"
   },
@@ -21,6 +27,12 @@
   },
   "jest": {
     "preset": "react-native",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "testPathIgnorePatterns": [
+      "__tests__/helpers"
+    ],
     "verbose": true
   },
   "dependencies": {
@@ -29,8 +41,7 @@
     "expo": "^27.0.1",
     "react": "16.3.1",
     "react-native": "0.55.2",
-    "react-native-material-ui": "^1.22.3",
-    "react-native-vector-icons": "^4.0.0",
+    "react-native-vector-icons": "^4.6.0",
     "websql": "0.4.4"
   }
 }
