@@ -1,7 +1,7 @@
 // __tests__/Main.js
-import { React, shallow } from '../helpers/specHelper'
-import { ToolbarAndroid } from 'react-native'
+import { FlatList, ToolbarAndroid } from 'react-native'
 import Main from '../../src/pages/Main'
+import { React, shallow } from '../helpers/specHelper'
 
 describe('Main.js', () => {
   let wrapper
@@ -30,6 +30,17 @@ describe('Main.js', () => {
 
     it('has a navIcon', () => {
       expect(toolbar.prop('navIcon')).toBeTruthy()
+    })
+  })
+
+  describe('the flatlist', () => {
+    let flatlist
+    beforeEach(() => {
+      flatlist = wrapper.find(FlatList)
+    })
+
+    it('renders', () => {
+      expect(flatlist).toHaveLength(1)
     })
   })
 })

@@ -1,3 +1,4 @@
 export default {
-  primary: 'green'
+  primary: '#008000',
+  darkPrimary: '#006400'
 }
