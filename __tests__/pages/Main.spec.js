@@ -1,6 +1,7 @@
-// __tests__/Main.js
+// __tests__/pages/Main.js
 import { FlatList, ToolbarAndroid } from 'react-native'
 import Main from '../../src/pages/Main'
+import SimpleList from '../../src/organisms/SimpleList'
 import { React, shallow } from '../helpers/specHelper'
 
 describe('Main.js', () => {
@@ -33,14 +34,10 @@ describe('Main.js', () => {
     })
   })
 
-  describe('the flatlist', () => {
-    let flatlist
+  describe('the simplelist', () => {
+    let simpleList
     beforeEach(() => {
-      flatlist = wrapper.find(FlatList)
-    })
-
-    it('renders', () => {
-      expect(flatlist).toHaveLength(1)
+      simpleList = wrapper.find(SimpleList)
     })
   })
 })
