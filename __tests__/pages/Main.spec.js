@@ -1,7 +1,7 @@
 // __tests__/pages/Main.js
 import { FlatList, ToolbarAndroid } from 'react-native'
 import Main from '../../src/pages/Main'
-import SimpleList from '../../src/organisms/SimpleList'
+import SimpleList from '../../src/molecules/SimpleList'
 import { React, shallow } from '../helpers/specHelper'
 
 describe('Main.js', () => {

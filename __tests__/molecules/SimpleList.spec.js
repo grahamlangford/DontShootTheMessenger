@@ -1,6 +1,7 @@
-// __tests__/organisms/SimpleList.js
-import { FlatList, Text } from 'react-native'
-import SimpleList from '../../src/organisms/SimpleList'
+// __tests__/molecules/SimpleList.js
+import { Text } from 'react-native'
+import SimpleList from '../../src/molecules/SimpleList'
+import Contact from '../../src/atoms/Contact'
 import { React, shallow } from '../helpers/specHelper'
 
 describe('SimpleList.js', () => {
@@ -16,5 +17,9 @@ describe('SimpleList.js', () => {
 
   it('renders', () => {
     expect(wrapper).toBeTruthy()
+  })
+
+  it('matches the snapshot', () => {
+    expect(wrapper).toMatchSnapshot()
   })
 })

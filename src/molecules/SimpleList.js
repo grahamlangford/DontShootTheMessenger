@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Dimensions, FlatList, StyleSheet, Text, View } from 'react-native'
+import Contact from '../atoms/Contact'
 
 const SimpleList = ({ itemClickHandler, items }) => {
   return (
@@ -8,9 +9,7 @@ const SimpleList = ({ itemClickHandler, items }) => {
       <FlatList
         data={items}
         renderItem={({ item }) => (
-          <Text style={styles.listItem} onPress={() => itemClickHandler(item)}>
-            {item}
-          </Text>
+          <Contact onPress={itemClickHandler} item={item} />
         )}
         keyExtractor={(item, index) => index.toString()}
       />
